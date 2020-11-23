@@ -5,10 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
 
-  has_one_attached :avatar
   validates_presence_of :firstname, :lastname
   validates :email, uniqueness: true
+  
   has_many :addresses
   has_many :orders
   has_many :ratings, through: :orders
+
+  has_one_attached :avatar
 end
