@@ -82,7 +82,7 @@ User.ids.each do |id|
   )
 end
 
-puts "Adresses linked to users"
+puts "Addresses linked to users"
 
 50.times do
   Rating.create!(
