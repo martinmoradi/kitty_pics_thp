@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 2020_11_23_122437) do
 
   create_table "addresses", force: :cascade do |t|
     t.string "street_number"
-    t.string "street_name"
-    t.string "zipcode"
-    t.string "city"
-    t.string "country"
+    t.string "street_name", null: false
+    t.string "zipcode", null: false
+    t.string "city", null: false
+    t.string "country", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -67,9 +67,9 @@ ActiveRecord::Schema.define(version: 2020_11_23_122437) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.decimal "price"
+    t.string "title", null: false
+    t.text "description", null: false
+    t.decimal "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
