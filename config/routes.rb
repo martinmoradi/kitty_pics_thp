@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'carts/show'
+  get 'carts/update'
+  get 'carts/destroy'
   get 'ratings/new'
   get 'ratings/update'
   get 'ratings/destroy'
