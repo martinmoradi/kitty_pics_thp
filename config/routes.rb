@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'orders/new'
+  get 'orders/create'
+  get 'orders/show'
   get 'addresses/index'
   get 'addresses/show'
   get 'addresses/new'
