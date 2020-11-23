@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'addresses/index'
+  get 'addresses/show'
+  get 'addresses/new'
+  get 'addresses/destroy'
+  get 'addresses/update'
+  get 'addresses/create'
+  get 'addresses/edit'
   devise_for :users
   resources :products
   root "static#index"
