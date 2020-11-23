@@ -3,5 +3,18 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@layer components {
-} ;
+
+html {
+  color: #FCECC2;
+  font-family: 'Poppins', sans-serif;
+};
+
+round {
+  background: #FFC61C;
+  width: 53px;
+  height: 53px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
