@@ -1,26 +1,34 @@
-<h2>Log in</h2>
+<div class="grid min-h-screen place-items-center ">
+  <div class="w-11/12 p-12 sm:w-8/12 md:w-1/2 lg:w-5/12 form_wrapper shadow-xl mb-12 rounded-lg">
+    <h1 class="text-4xl	 font-bold text-center mb-5"> Meow 😸 <br><span class="font-normal text-sm	">welcome back !</span></h1>    
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field mt-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"block w-full p-3 mt-1 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl" %>
+        <%= f.label :email, class:"block text-xs font-semibold text-gray-600 uppercase mt-1 ml-2" %><br />
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.password_field :password, autocomplete: "current-password", class:"block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl	" %>
+      <%= f.label :password, class:"block text-xs font-semibold text-gray-600 uppercase mt-1 ml-2" %><br />
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <% if devise_mapping.rememberable? %>
+      <div class="field mt-2 ml-1">
+        <%= f.check_box :remember_me, class:"mt-1" %>
+        <%= f.label :remember_me, class:"text-sm font-semibold text-gray-600 ml-1 mb-1" %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Log in", class:"mt-5 bg-yellow-500 hover:bg-yellow-400 py-4 px-6 block whitespace-no-wrap rounded-xl" %>
+    </div>
+
+    <% end %>
+
+    <div class="mt-6 text-sm ml-1">
+      <%= render "users/shared/links"%>
+    </div>
+
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
