@@ -83,38 +83,11 @@ User.ids.each do |id|
 end
 
 puts "Adresses linked to users"
-# ok
-
-User.ids.each do |id|
-  Cart.create!(
-    user_id: id,
-  )
-end
-
-puts "One cart seeded per User"
-
-50.times do
-  Order.create!(
-    cart_id: Cart.ids.sample,
-    user_id: User.ids.sample,
-    address_id: Address.ids.sample,
-  )
-end
-puts "50 orders seeded"
-
-Cart.ids.each do |id|
-  LineItem.create!(
-    cart_id: id,
-    product_id: Product.ids.sample,
-    quantity: Faker::Number.within(range: 1..5),
-  )
-end
-puts "Line Items seeded per Cart"
 
 50.times do
   Rating.create!(
     product_id: Product.ids.sample,
-    order_id: Order.ids.sample,
+    user_id: User.ids.sample,
     rating: Faker::Number.within(range: 3..5),
   )
 end

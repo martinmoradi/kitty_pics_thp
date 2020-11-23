@@ -57,6 +57,8 @@ group :development do
   gem "letter_opener"
   # Generate Diagram
   gem "rails-erd"
+  # Table print
+  gem "table_print"
 end
 
 group :test do
@@ -92,5 +94,6 @@ gem "activerecord-reset-pk-sequence"
 # gem "letter_opener"
 # gem "stripe"
 # gem "activerecord-reset-pk-sequence"
+# gem "table_print"
 
 #################################################################################

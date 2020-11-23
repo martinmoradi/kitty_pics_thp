@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_144608) do
+ActiveRecord::Schema.define(version: 2020_11_23_173307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,12 +102,12 @@ ActiveRecord::Schema.define(version: 2020_11_23_144608) do
 
   create_table "ratings", force: :cascade do |t|
     t.bigint "product_id", null: false
-    t.bigint "order_id", null: false
     t.integer "rating", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["order_id"], name: "index_ratings_on_order_id"
+    t.bigint "user_id"
     t.index ["product_id"], name: "index_ratings_on_product_id"
+    t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -139,6 +139,6 @@ ActiveRecord::Schema.define(version: 2020_11_23_144608) do
   add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "carts"
   add_foreign_key "orders", "users"
-  add_foreign_key "ratings", "orders"
   add_foreign_key "ratings", "products"
+  add_foreign_key "ratings", "users"
 end
