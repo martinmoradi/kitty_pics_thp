@@ -55,6 +55,8 @@ group :development do
   gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
   # Preview email in browser
   gem "letter_opener"
+  # Generate Diagram 
+  gem "rails-erd"
 end
 
 group :test do
