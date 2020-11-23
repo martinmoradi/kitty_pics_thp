@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html class="bg-primary">
+<html class="bg-primary bg-opacity-90">
   <head>
-    <title>ThpKittensShop</title>
+    <title>Kitty Pics</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -14,9 +14,7 @@
     <link rel="favicon" type="image/png" href="/app/assets/images/favicon.png"/>
   </head>
   <body>
-  
-  <%= render "layouts/navbar" %>
-
+    <%= render "layouts/navbar" %>
     <%= yield %>
     <%= render "layouts/footer" %>
   </body>

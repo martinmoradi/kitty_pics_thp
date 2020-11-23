@@ -10,7 +10,9 @@
   width: 80%;
   z-index: -1;
   border-radius: 46px;
-  background-color: #fdbc0b;
+  background-image: url(image_path("triangles.png"));
+  background-repeat: space repeat;
+  background-size: cover;
 }
 
 .jumbotron-text {

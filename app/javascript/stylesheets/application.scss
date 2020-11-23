@@ -3,11 +3,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-
 html {
-  color: #FCECC2;
-  font-family: 'Poppins', sans-serif;
-};
+  font-family: "Poppins", sans-serif;
+}
 
 .dropdown:hover .dropdown-menu {
   display: block;
