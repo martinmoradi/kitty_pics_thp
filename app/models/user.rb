@@ -7,8 +7,8 @@ class User < ApplicationRecord
 
   validates_presence_of :firstname, :lastname
   validates :email, uniqueness: true
-  
-  has_many :addresses
+
+  has_many :addresses, dependant: destroy
   has_many :orders
   has_many :ratings, through: :orders
 
