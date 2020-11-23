@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'ratings/new'
+  get 'ratings/update'
+  get 'ratings/destroy'
   get 'orders/new'
   get 'orders/create'
   get 'orders/show'
