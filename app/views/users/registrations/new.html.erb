@@ -1,38 +1,45 @@
-<h2>Sign up</h2>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+<div class="grid min-h-screen place-items-center">
+  <div class="w-11/12 p-12 form_wrapper sm:w-8/12 md:w-1/2 lg:w-5/12 shadow-xl mb-12 rounded-lg">
+    <h1 class="text-4xl	 font-bold text-center"> Meow 😸 <br><span class="font-normal text-sm	">please fill in your information to continue</span></h1>    
+     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
+      
+      <div class="field mt-10">
+        <%= f.text_field :firstname, autofocus: true, class:"block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl	"%>
+        <%= f.label :firstname, class:"block text-xs font-semibold text-gray-600 uppercase mt-1 ml-2" %><br />
+      </div>
 
-  <div class="field">
-    <%= f.label :firstname %><br />
-    <%= f.text_field :firstname, autofocus: true %>
-  </div>
+      <div class="field ">
+        <%= f.text_field :lastname, autofocus: true, class:"block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl	" %>
+        <%= f.label :lastname, class:"block text-xs font-semibold text-gray-600 uppercase mt-1 ml-2 " %><br />
+      </div>
 
-  <div class="field">
-    <%= f.label :lastname %><br />
-    <%= f.text_field :lastname, autofocus: true %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl	" %>
+        <%= f.label :email, class:"block text-xs font-semibold text-gray-600 uppercase mt-1 ml-2"  %><br />
+      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password", class:"block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl	" %>
+        <%= f.label :password, class:"block text-xs font-semibold text-gray-600 uppercase mt-1 ml-2" %>
+        <% if @minimum_password_length %>
+          <span class="text-xs italic text-gray-500 mt-1 ml-2">(<%= @minimum_password_length %> characters minimum)</span>
+        <% end %><br />
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl	" %>
+        <%= f.label :password_confirmation, class:"block text-xs font-semibold text-gray-600 uppercase mt-1 ml-2" %> 
+        
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class:"mt-5 bg-yellow-500 hover:bg-yellow-400 py-4 px-6 block whitespace-no-wrap rounded-xl" %>
+      </div>
+
+    <% end %>
+    <div class="mt-6 text-sm ml-1">
+     <%= render "users/shared/links"%>
+   </div>
   </div>
-  
-<% end %>
-<%= render "users/shared/links" %>
+</div>
