@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_173307) do
+ActiveRecord::Schema.define(version: 2020_11_24_155019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_173307) do
   end
 
   create_table "addresses", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
     t.string "street_number"
     t.string "street_name", null: false
     t.string "zipcode", null: false
@@ -58,10 +60,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_173307) do
   end
 
   create_table "carts", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -76,7 +76,9 @@ ActiveRecord::Schema.define(version: 2020_11_23_173307) do
     t.integer "quantity", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "order_id", null: false
     t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["order_id"], name: "index_line_items_on_order_id"
     t.index ["product_id"], name: "index_line_items_on_product_id"
   end
 
@@ -133,8 +135,8 @@ ActiveRecord::Schema.define(version: 2020_11_23_173307) do
   add_foreign_key "addresses", "users"
   add_foreign_key "assigment_product_categories", "categories"
   add_foreign_key "assigment_product_categories", "products"
-  add_foreign_key "carts", "users"
   add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
   add_foreign_key "orders", "addresses"
   add_foreign_key "orders", "carts"

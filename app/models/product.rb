@@ -3,7 +3,7 @@ class Product < ApplicationRecord
   has_many :assigment_product_categories
   has_many :categories, through: :assigment_product_categories
   has_many :ratings
-  has_many :line_items
+  has_many :line_items, dependent: :destroy
 
   validates :title,
     presence: true,
@@ -17,13 +17,12 @@ class Product < ApplicationRecord
 
   has_one_attached :picture
 
-  private 
+  private
 
   def not_referenced_by_any_line_item
     unless line_items.empty?
-        errors.add(:base, "Line items present")
-        throw :abort
+      errors.add(:base, "Line items present")
+      throw :abort
     end
   end
-
 end

@@ -53,9 +53,6 @@
           </div>
           <!-- !SECTION: index-->
         </div>
-
-
-        
         <section class="text-gray-900 ">
           <!-- SECTION: Blog -->
           <div
@@ -63,13 +60,10 @@
      >
             <!-- SECTION: card -->
             <% @products.each do |product|%>
-            <%= render "products/card", product: product %>
+              <%= render "products/card", product: product %>
             <% end %>
-                <!-- End card -->
-
-                <!-- Div for cards oganization -->
-                      </div>
-
-                      
-                      <!-- !SECTION: Blog -->
-                    </section>
+            <!-- End card -->
+            <!-- Div for cards oganization -->
+          </div>
+          <!-- !SECTION: Blog -->
+        </section>
