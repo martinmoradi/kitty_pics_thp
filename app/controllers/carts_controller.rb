@@ -1,17 +1,12 @@
 class CartsController < ApplicationController
-
-  # GET /carts/1
-  # GET /carts/1.json
   def show
+    @cart = @current_cart
   end
 
-  # PATCH/PUT /carts/1
-  # PATCH/PUT /carts/1.json
-  def update
-  end
-
-  # DELETE /carts/1
-  # DELETE /carts/1.json
   def destroy
+    @cart = @current_cart
+    @cart.destroy
+    session[:cart_id] = nil
+    redirect_to root_path
   end
 end
