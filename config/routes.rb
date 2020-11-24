@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+
   root "products#index"
 
-  get "carts/:id" => "carts#show", as: "cart"
+  get "carts/:id" => "carts#show", as: "my_cart"
   delete "carts/:id" => "carts#destroy"
 
   post "line_items/:id/add" => "line_items#add_quantity", as: "line_item_add"
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
                                                                                                      confirmation: "verification",
                                                                                                      unlock: "unblock",
                                                                                                      sign_up: "sign_up" }
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
