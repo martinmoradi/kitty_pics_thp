@@ -43,7 +43,7 @@ end
 
 puts "30 users seeded"
 
-80.times do
+12.times do
   Product.create!(
     title: Faker::Creature::Cat.name,
     description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 6),
@@ -52,7 +52,7 @@ puts "30 users seeded"
   )
 end
 
-puts "80 products seeded"
+puts "12 products seeded"
 
 10.times do
   Category.create!(
