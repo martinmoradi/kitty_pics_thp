@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  before_destroy :not_referenced_by_any_line_item
   has_many :assigment_product_categories
   has_many :categories, through: :assigment_product_categories
   has_many :ratings
@@ -15,4 +16,14 @@ class Product < ApplicationRecord
     numericality: { greater_than: 0 }
 
   has_one_attached :picture
+
+  private 
+
+  def not_referenced_by_any_line_item
+    unless line_items.empty?
+        errors.add(:base, "Line items present")
+        throw :abort
+    end
+  end
+
 end
