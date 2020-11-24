@@ -1,32 +1,44 @@
-<section class="bg-transparent text-black  ">
+<section class="bg-transparent text-black">
   <nav class="flex flex-col items-center justify-between mx-auto px-8 py-4 md:flex-row lg:w-5/6 xl:3/4 border-b-2 mb-2 border-yellow-500">
     <!-- SECTION : Logo -->
     <div
         class="mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 "
       >
-      <i class="fas fa-cat"></i>
+      <a href="/"><i class="fas fa-cat"></i></a>
     </div>
     <!-- !SECTION : Logo -->
     <ul class="flex items-center justify-between uppercase text-center sm:text-left">
       <%= link_to "Home", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
       <%= link_to "Profile", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
       <%= link_to "Contact", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
-      <div class="dropdown inline-block relative">
-        <button class="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold py-2 px-5 rounded inline-flex items-center">
-          <span class="">Get started</span>
-          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-        </button>
-        <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 divide-y divide-yellow-500">
-          <li><%= link_to 'SignUp', new_user_registration_path, class:"rounded-t bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap " %></li>
-          <li> <%= link_to 'Log In', new_user_session_path, class:"rounded-t bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap "%> </li>
-        </ul>
-      </div>
+      <% if current_user%>
+        <div class="dropdown inline-block">
+          <button class="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold py-2 px-5 rounded inline-flex items-center">
+            <span class="">Account</span>
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+          </button>
+          <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 divide-y divide-yellow-500">
+            <li><%= link_to 'My account', root_path, class:"rounded-t bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap " %></li>
+            <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete,class:"rounded-b bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap "%> </li>
+          </ul>
+        </div>
+      <%else%>
+        <div class="dropdown inline-block relative">
+          <button class="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold py-2 px-5 rounded inline-flex items-center">
+            <span class="">Get started</span>
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
+          </button>
+          <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 divide-y divide-yellow-500">
+            <li><%= link_to 'SignUp', new_user_registration_path, class:"rounded-t bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap " %></li>
+            <li> <%= link_to 'Log In', new_user_session_path, class:"rounded-b bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap "%> </li>
+          </ul>
+        </div>
+      <% end %>
     </ul>
     <!-- SECTION : cart Btn -->
-    <button class="mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 "
-      >
+    <%= button_to cart_path(@current_cart), method: :get, class:"mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 focus:outline-none" do %>
       <i class="fas fa-shopping-cart"></i>
-    </button>
+    <% end %>
     <!-- !SECTION : cart Btn -->
   </nav>
 </section>

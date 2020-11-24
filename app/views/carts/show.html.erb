@@ -1,2 +1,38 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<h2>Cart show</h2>
+<ul>
+  <% @cart.line_items.each do |line_item| %>
+    <li>Item: <%= line_item.product.name %>/ Price: <%= number_to_currency(line_item.product.price) %>/ Quantity: <%= line_item.quantity %>/ Total Price: <%= number_to_currency(line_item.total_price) %>
+      # See lineItem section below for explanation of line_item links
+      <ul>
+        <li>
+          <%= link_to "Add one", line_item_add_path(:id => line_item), method: :post %>
+          <%= link_to "Reduce one", line_item_reduce_path(:id => line_item), method: :post %>
+        </li>
+        <li>
+          <%= link_to "Remove item", line_item_path(line_item), method: :delete %>
+        </li>
+      </ul>
+      #
+    <% end %>
+  </ul>
+  <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
+  # See Order section below for explanation of new_order_path
+  <%= link_to "Proceed to checkout", new_order_path %><br>
+  #
+  <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"}
+
+
+<div id="summary" class="w-1/4 px-8 py-10 bg-yellow-200">
+    <h1 class="font-semibold text-2xl border-b pb-8">Order Summary</h1>
+    <div class="flex justify-between mt-10 mb-5">
+      <span class="font-semibold text-sm uppercase">Items 1</span>
+      <span class="font-semibold text-sm">590$</span>
+    </div>
+    <div class="border-t mt-8">
+      <div class="flex font-semibold justify-between py-6 text-sm uppercase">
+        <span>Total cost</span>
+        <span>$600</span>
+      </div>
+      <button class="bg-yellow-500 font-semibold hover:bg-yellow-600 py-3 text-sm text-white uppercase w-full focus:outline-none">Checkout</button>
+    </div>
+  </div>
