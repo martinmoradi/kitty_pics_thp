@@ -45,7 +45,7 @@ puts "30 users seeded"
 
 80.times do
   Product.create!(
-    title: Faker::Creature::Cat,
+    title: Faker::Creature::Cat.name,
     description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 6),
     price: Faker::Number.within(range: 25..200),
     img_url: Faker::LoremPixel.image(size: "640x640", is_gray: false, category: "cats"),
