@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_11_24_093136) do
-=======
 ActiveRecord::Schema.define(version: 2020_11_24_155019) do
->>>>>>> db477322718b4d554a463c1e9408ab40e9f76501
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -131,8 +127,6 @@ ActiveRecord::Schema.define(version: 2020_11_24_155019) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "cart_id"
-    t.index ["cart_id"], name: "index_users_on_cart_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -149,5 +143,4 @@ ActiveRecord::Schema.define(version: 2020_11_24_155019) do
   add_foreign_key "orders", "users"
   add_foreign_key "ratings", "products"
   add_foreign_key "ratings", "users"
-  add_foreign_key "users", "carts"
 end
