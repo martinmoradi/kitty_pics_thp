@@ -3,7 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :confirmable
+         
+
+         # :confirmable -> disabled devise email confirmation for heroku seeding purposes
 
   validates_presence_of :firstname, :lastname
   validates :email, uniqueness: true
