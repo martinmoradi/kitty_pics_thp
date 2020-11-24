@@ -1,16 +1,15 @@
 <section class="bg-transparent text-black">
   <nav class="flex flex-col items-center justify-between mx-auto px-8 py-4 md:flex-row lg:w-5/6 xl:3/4 border-b-2 mb-2 border-yellow-500">
     <!-- SECTION : Logo -->
-    <div
-        class="mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 "
-      >
-     <a href="/"><i class="fas fa-cat"></i></a>
-    </div>
+
+
+
     <!-- !SECTION : Logo -->
+    
     <ul class="flex items-center justify-between uppercase text-center sm:text-left">
-      <%= link_to "Home", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
-      <%= link_to "Profile", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
-      <%= link_to "Contact", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
+      <a href="/" class="mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 bg-yellow-500  border-yellow-500 "><i class="fas fa-cat"></i></a>
+      <%= link_to "Concept", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
+      <%= link_to "Admin", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
       
         <% if current_user%>
         <div class="dropdown inline-block">
@@ -39,10 +38,12 @@
       <% end %>
     </ul>
     <!-- SECTION : cart Btn -->
-    <button class="mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 focus:outline-none "
+    <button class="mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 bg-yellow-500  border-yellow-500 focus:outline-none hidden md:block"
       >
       <i class="fas fa-shopping-cart"></i>
     </button>
     <!-- !SECTION : cart Btn -->
   </nav>
 </section>
+
+
