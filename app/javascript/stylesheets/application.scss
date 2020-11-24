@@ -11,6 +11,18 @@ html {
   display: block;
 }
 
+.yellow-background {
+  background: radial-gradient(
+      farthest-side at bottom left,
+      rgba(254, 212, 137, 1) 10%,
+      transparent
+    ),
+    radial-gradient(
+      farthest-corner at bottom right,
+      rgba(255, 235, 193, 0.7175245098039216) 80%,
+      transparent
+    );
+}
 // .form_wrapper {
 //   background-image: url(image_path("triangles.png"));
 //   background-repeat: space repeat;
