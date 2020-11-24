@@ -30,7 +30,7 @@ ActiveRecord::Base.connection.disable_referential_integrity do
   Rating.reset_pk_sequence
 end
 
-30.times do
+5.times do
   User.create!(
     firstname: Faker::Name.first_name,
     lastname: Faker::Name.last_name,
@@ -41,9 +41,9 @@ end
   )
 end
 
-puts "30 users seeded"
+puts "5 users seeded"
 
-80.times do
+12.times do
   Product.create!(
     title: Faker::Creature::Cat.name,
     description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 6),
@@ -52,7 +52,7 @@ puts "30 users seeded"
   )
 end
 
-puts "80 products seeded"
+puts "12 products seeded"
 
 10.times do
   Category.create!(
@@ -60,7 +60,7 @@ puts "80 products seeded"
   )
 end
 
-puts "10 categories seeded"
+puts "8 categories seeded"
 
 Product.ids.each do |id|
   AssigmentProductCategory.create!(
