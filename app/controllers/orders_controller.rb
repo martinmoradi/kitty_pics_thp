@@ -1,16 +1,13 @@
 class OrdersController < ApplicationController
-
-  # GET /orders/new
-  def new
+  def index
+    @orders = Order.all
   end
 
-  # POST /orders
-  # POST /orders.json
-  def create
-  end
-
-  # GET /orders/1
-  # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
+  end
+
+  def new
+    @order = Order.new
   end
 end

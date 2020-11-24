@@ -2,14 +2,13 @@ class Cart < ApplicationRecord
   belongs_to :user, optional: true
   belongs_to :order
   has_many :line_items, dependent: :destroy
+  has_many :products, through: :line_items
 
-  def add_product(product)
-    current_item = line_items.find_by(product_id: product.id)
-    if current_item
-      current_item.increment(:quantity)
-    else
-      current_item = line_items.build(product_id: product.id)
+  def sub_total
+    sum = 0
+    line_items.each do |line_item|
+      sum += line_item.total_price
     end
-    current_item
+    sum
   end
 end
