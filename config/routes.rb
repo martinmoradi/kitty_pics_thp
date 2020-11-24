@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  
-  devise_for :users
-  resources :products
-  root "products#index"
-  resources :users
-=======
   root "products#index"
 
   get "carts/:id" => "carts#show", as: "cart"
@@ -22,6 +15,5 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: "users/registrations" }
 
->>>>>>> db477322718b4d554a463c1e9408ab40e9f76501
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
