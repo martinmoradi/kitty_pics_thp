@@ -55,6 +55,6 @@ class LineItemsController < ApplicationController
   private
 
   def line_item_params
-    params.permit(:quantity, :product_id, :cart_id, :id)
+    params.permit(:quantity, :product_id, :cart_id, :id, :authenticity_token)
   end
 end
