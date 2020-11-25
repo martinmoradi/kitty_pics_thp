@@ -55,10 +55,6 @@ class LineItemsController < ApplicationController
   private
 
   def line_item_params
-<<<<<<< HEAD
     params.permit(:quantity, :product_id, :cart_id, :id, :authenticity_token)
-=======
-    params.permit(:quantity, :product_id, :cart_id, :id)
->>>>>>> c75ee0ebe9d596ccabcd59923929db59c4ce9040
   end
 end
