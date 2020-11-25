@@ -1,9 +1,11 @@
 class LineItemsController < ApplicationController
+  before_action :line_item_params
+
   def create
     # Find associated product and current cart
     chosen_product = Product.find(params[:product_id])
     current_cart = @current_cart
-
+    # binding.pry
     # If cart already has this product then find the relevant line_item and iterate quantity otherwise create a new line_item for this product
     if current_cart.products.include?(chosen_product)
       # Find the line_item with the chosen_product
@@ -17,14 +19,21 @@ class LineItemsController < ApplicationController
     end
 
     # Save and redirect to cart show path
-    @line_item.save
-    redirect_to cart_path(current_cart)
+    if @line_item.save
+      redirect_to my_cart_path(current_cart), notice: "Success"
+    else
+      redirect_to root_path, notice: "Error"
+    end
+  end
+
+  def new
+    @line_item = LineItem.new
   end
 
   def destroy
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-    redirect_to cart_path(@current_cart)
+    redirect_to my_cart_path(@current_cart)
   end
 
   def add_quantity
@@ -46,6 +55,6 @@ class LineItemsController < ApplicationController
   private
 
   def line_item_params
-    params.require(:line_item).permit(:quantity, :product_id, :cart_id)
+    params.permit(:quantity, :product_id, :cart_id, :id)
   end
 end

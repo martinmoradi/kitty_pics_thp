@@ -11,7 +11,7 @@
     <!-- SECTION: Image Gallery -->
     <div class="flex flex-col md:w-1/2 mx-2">
       <!-- SECTION: Main Image -->
-    <%= image_tag @product.img_url %>
+    <%= image_tag(@product.img_url) %>
  
       <!-- !SECTION: Other Images -->
     </div>
@@ -47,11 +47,8 @@
             <%= @product.price %><span class="text-base">€</span>
           </h2>
           <!-- !SECTION: Product Price -->
-          <button
-            class="px-6 bg-yellow-500 border-yellow-500 text-white md:px-12 uppercase py-2 rounded-r-md text-xl border-t border-b border-r xl:text-2xl transition-colors duration-200 ease-in-out focus:outline-none hover:bg-yellow-300"
-          >
-            Add to cart
-          </button>
+          <%= button_to "Add to cart", product_line_items_path(@product), class: "px-6 bg-yellow-500 border-yellow-500 text-white md:px-12 uppercase py-2 rounded-r-md text-xl border-t border-b border-r xl:text-2xl transition-colors duration-200 ease-in-out focus:outline-none hover:bg-yellow-300"
+          %>
     
         </div>
 
