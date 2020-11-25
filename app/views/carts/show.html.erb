@@ -13,7 +13,7 @@
         <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5">Total</h3>
       </div>
       <!-- LINE ITEMS LOOP -->
-      <% @cart.line_items.each do |line_item| %>
+      <% @cart.line_items.order('id desc').each do |line_item| %>
       <div class="hover-items flex items-center -mx-8 px-6 py-5">
         <div class="flex w-2/5">
           <!-- product -->
@@ -42,12 +42,9 @@
           </svg>
           <% end %>
         </div>
-        <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.product.price) %></span>
-        <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.total_price) %></span>
+        <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.product.price, unit: '€', format: "%n%u") %></span>
+        <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.total_price, unit: '€', format: "%n%u") %></span>
       </div>
-          <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.product.price, unit: '€', format: "%n%u") %></span>
-          <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.total_price, unit: '€', format: "%n%u") %></span>
-        </div>        
       <% end %>
 
       <%= link_to root_path, class:"flex font-semibold text-yellow-600 text-sm mt-10" do %>
@@ -72,7 +69,7 @@
           <span><%= number_to_currency(@cart.sub_total, unit: '€', format: "%n%u") %></span>
         </div>
         <button
-          class="bg-yellow-500 hover:bg-yellow-600 font-semibold py-3 text-sm text-black font-semibold uppercase w-full focus:outline-none">Checkout</button>
+          class="bg-yellow-500 hover:bg-yellow-600 font-semibold py-3 text-sm text-black uppercase w-full focus:outline-none">Checkout</button>
       </div>
     </div>
   </div>
