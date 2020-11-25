@@ -4,15 +4,15 @@ Rails.application.routes.draw do
   resources :carts, only: %i[show destroy], path: 'my_cart'
   resource :cart, only: :show, as: :my_cart, path: 'my_cart'
   resources :products do
-    resources :line_items
+    resources :line_items, only: %i[create new create destroy]
   end
 
   resources :line_items do
     post 'line_items/:id/add' => 'line_items#add_quantity', as: 'line_item_add'
     post 'line_items/:id/reduce' => 'line_items#reduce_quantity', as: 'line_item_reduce'
   end
-  resources :orders
-  resources :charges
+  resources :orders, only: %i[index show new]
+  resources :charges, only: %i[new create]
 
   devise_for :users, controllers: { registrations: 'users/registrations' }, path: '/', path_names: { sign_in: 'log_in',
                                                                                                      sign_out: 'log_out',
