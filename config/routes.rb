@@ -10,9 +10,6 @@ Rails.application.routes.draw do
   resources :line_items
   post 'line_items/:id/add' => 'line_items#add_quantity', as: 'line_item_add'
   post 'line_items/:id/reduce' => 'line_items#reduce_quantity', as: 'line_item_reduce'
-  #   post 'line_items/:id/add' => 'line_items#add_quantity', as: 'line_item_add'
-  #   post 'line_items/:id/reduce' => 'line_items#reduce_quantity', as: 'line_item_reduce'
-  # end
 
   resources :orders, only: %i[index show new]
   resources :charges, only: %i[new create]
@@ -24,5 +21,6 @@ Rails.application.routes.draw do
                                                                                                      unlock: 'unblock',
                                                                                                      sign_up: 'sign_up' }
 
+  resources :users, only: %i[show edit update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
