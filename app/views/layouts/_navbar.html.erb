@@ -36,7 +36,7 @@
     <% end %>
   </ul>
   <!-- SECTION : cart Btn -->
-  <%= button_to my_cart_path(@current_cart), method: :get, class:"mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 focus:outline-none" do %>
+  <%= link_to my_cart_path(@current_cart), class:"mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 focus:outline-none" do %>
     <i class="fas fa-shopping-cart"></i>
   <% end %>
   <!-- !SECTION : cart Btn -->
