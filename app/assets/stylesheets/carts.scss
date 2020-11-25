@@ -2,3 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.bg-triangles {
+  background-image: url(image_path("triangles.png"));
+  background-repeat: space repeat;
+  background-size: cover;
+}
+
+.hover-items:hover {
+  background-color: #feeecf;
+}
