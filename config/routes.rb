@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "products#index"
 
   get "carts/:id" => "carts#show", as: "cart"
@@ -12,8 +13,9 @@ Rails.application.routes.draw do
 
   resources :products
   resources :orders
-
+  resources :charges
   devise_for :users, controllers: { registrations: "users/registrations" }
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
