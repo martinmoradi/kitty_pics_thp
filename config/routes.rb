@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  root "products#index"
-=======
   root 'products#index'
->>>>>>> 3580e1adf76a98bb50090e9b84164e9568d847cc
 
   resources :carts, only: %i[show destroy], path: 'my_cart'
   resource :cart, only: :show, as: :my_cart, path: 'my_cart'
@@ -28,9 +24,6 @@ Rails.application.routes.draw do
                                                                                                      unlock: 'unblock',
                                                                                                      sign_up: 'sign_up' }
 
-<<<<<<< HEAD
   resources :users
-=======
->>>>>>> 3580e1adf76a98bb50090e9b84164e9568d847cc
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
