@@ -81,6 +81,11 @@ gem "activerecord-reset-pk-sequence"
 
 # Random data generator
 gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
+
+# Mailjet
+gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+
+
 #################################################################################
 
 # List of added gems :
@@ -96,5 +101,5 @@ gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "mast
 # gem "stripe"
 # gem "activerecord-reset-pk-sequence"
 # gem "table_print"
-
+# gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 #################################################################################
