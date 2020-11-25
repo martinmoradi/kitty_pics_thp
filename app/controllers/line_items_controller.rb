@@ -1,4 +1,6 @@
 class LineItemsController < ApplicationController
+  before_action :line_item_params
+
   def create
     # Find associated product and current cart
     chosen_product = Product.find(params[:product_id])
@@ -46,6 +48,6 @@ class LineItemsController < ApplicationController
   private
 
   def line_item_params
-    params.require(:line_item).permit(:quantity, :product_id, :cart_id)
+    params.permit(:quantity, :product_id, :cart_id, :id, :authenticity_token)
   end
 end
