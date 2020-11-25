@@ -33,8 +33,6 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   # Debugger
   gem "pry"
-  # Hide API keys from bad guys
-  gem "dotenv-rails"
 end
 
 group :development do
@@ -83,8 +81,10 @@ gem "activerecord-reset-pk-sequence"
 gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
 
 # Mailjet
-gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
+gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
 
+# Hide API keys from bad guys
+gem "dotenv-rails"
 
 #################################################################################
 
