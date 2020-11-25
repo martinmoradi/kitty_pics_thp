@@ -1,11 +1,13 @@
 <section class="bg-transparent text-black">
   <nav class="flex flex-col items-center justify-between mx-auto px-8 py-4 md:flex-row lg:w-5/6 xl:3/4 border-b-2 mb-2 border-yellow-500">
     <!-- SECTION : Logo -->
-    <div
-        class="mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 "
-      
-      <a href="/"><i class="fas fa-cat"></i></a>
-  </div>
+    <%= link_to root_path do %>
+      <div class="mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 "      
+        <a>
+        <i class="fas fa-cat"></i>
+      </a>
+    </div>
+  <% end %>
   <!-- !SECTION : Logo -->
   <ul class="flex items-center justify-between uppercase text-center sm:text-left">
     <%= link_to "Home", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
@@ -22,7 +24,7 @@
           <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete,class:"rounded-b bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap "%> </li>
         </ul>
       </div>
-    <% else %>
+    <%else%>
       <div class="dropdown inline-block relative">
         <button class="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold py-2 px-5 rounded inline-flex items-center">
           <span class="">Get started</span>
@@ -36,7 +38,7 @@
     <% end %>
   </ul>
   <!-- SECTION : cart Btn -->
-  <%= link_to my_cart_path(@current_cart), class:"mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 focus:outline-none" do %>
+  <%= button_to cart_path(@current_cart), method: :get, class:"mr-4 flex items-center hover:bg-yellow-400 justify-center rounded-full w-8 h-8 sm:w-12 sm:h-12 border-4 bg-yellow-500  border-yellow-500 focus:outline-none" do %>
     <i class="fas fa-shopping-cart"></i>
   <% end %>
   <!-- !SECTION : cart Btn -->
