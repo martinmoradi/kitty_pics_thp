@@ -33,7 +33,11 @@
                     <!-- SECTION: Article Preview -->
                         <div class="flex items-center justify-between py-2 px-3 ">
                           <h1 class="text-gray-800 ml-2  font-bold"><%= product.price%>€</h1>
+<<<<<<< HEAD
                             <%= button_to product_line_items_path(product.id), class: 'bg-yellow-500 text-xs text-white px-2 py-1 font-semibold tracking-widest rounded uppercase hover:bg-yellow-400 ml-5' do %>
+=======
+                            <%= button_to line_items_path(product_id: product.id), method: :post, class: 'bg-yellow-500 text-xs text-white px-2 py-1 font-semibold tracking-widest rounded uppercase hover:bg-yellow-400 ml-5' do %>
+>>>>>>> d09e2edb4277dfc3f9bcc7bf697348377047dd8e
                           <%= image_pack_tag 'cart1.png', size:"18x18" %>
                           <% end %>
                           <!--

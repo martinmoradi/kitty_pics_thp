@@ -51,8 +51,6 @@ group :development do
   gem "binding_of_caller"
   # Ruby static analyzer and code formatter
   gem "rubocop", require: false
-  # Random data generator
-  gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
   # Preview email in browser
   gem "letter_opener"
   # Generate Diagram
@@ -80,6 +78,9 @@ gem "stripe"
 
 # Allow resetting the ID of tables to 0
 gem "activerecord-reset-pk-sequence"
+
+# Random data generator
+gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
 #################################################################################
 
 # List of added gems :
