@@ -38,8 +38,8 @@
               </svg>
             <% end %>
           </div>
-          <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.product.price) %></span>
-          <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.total_price) %></span>
+          <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.product.price, unit: '€', format: "%n%u") %></span>
+          <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.total_price, unit: '€', format: "%n%u") %></span>
         </div>        
       <% end %>
 
@@ -53,13 +53,13 @@
       <% @cart.line_items.each do |line_item| %>
         <div class="flex justify-between mt-10 mb-5 ">
           <span class="font-semibold text-sm uppercase"><%= line_item.quantity %> X <%= line_item.product.title %> </span>
-          <span class="font-semibold text-sm"><%= number_to_currency(line_item.total_price) %></span>
+          <span class="font-semibold text-sm"><%= number_to_currency(line_item.total_price, unit: '€', format: "%n%u") %></span>
         </div>
       <% end %>
       <div class="border-t border-yellow-400 mt-8">
         <div class="flex font-semibold justify-between py-6 text-sm uppercase">
           <span>Total cost</span>
-          <span><%= number_to_currency(@cart.sub_total) %></span>
+          <span><%= number_to_currency(@cart.sub_total, unit: '€', format: "%n%u") %></span>
         </div>
         <button class="bg-yellow-500 hover:bg-yellow-600 font-semibold py-3 text-sm text-black font-semibold uppercase w-full focus:outline-none">Checkout</button>
       </div>
