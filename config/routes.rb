@@ -10,9 +10,6 @@ Rails.application.routes.draw do
   resources :line_items
   post 'line_items/:id/add' => 'line_items#add_quantity', as: 'line_item_add'
   post 'line_items/:id/reduce' => 'line_items#reduce_quantity', as: 'line_item_reduce'
-  #   post 'line_items/:id/add' => 'line_items#add_quantity', as: 'line_item_add'
-  #   post 'line_items/:id/reduce' => 'line_items#reduce_quantity', as: 'line_item_reduce'
-  # end
 
   resources :orders, only: %i[index show new]
   resources :charges, only: %i[new create]
