@@ -33,7 +33,7 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   # Debugger
   gem "pry"
-  end
+end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
@@ -79,6 +79,9 @@ gem "activerecord-reset-pk-sequence"
 
 # Hide API keys from bad guys
 gem "dotenv-rails"
+
+# Mailjet
+gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
 
 # Random data generator
 gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
