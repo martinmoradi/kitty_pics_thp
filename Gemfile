@@ -80,15 +80,11 @@ gem "activerecord-reset-pk-sequence"
 # Hide API keys from bad guys
 gem "dotenv-rails"
 
-
 # Random data generator
 gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
 
 # Mailjet
 gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
-
-# Hide API keys from bad guys
-gem "dotenv-rails"
 
 #################################################################################
 
