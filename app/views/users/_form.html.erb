@@ -1,0 +1,35 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="grid min-h-screen place-items-center mt-6">
+  <div class="w-11/12 p-12 form_wrapper sm:w-8/12 md:w-1/2 lg:w-5/12 shadow-xl mb-12 rounded-lg">
+  <h1 class="text-4xl	 font-bold text-center"> <span class="jumbo-header text-6xl">Meow 😸</span> 
+  <br><span class="font-normal text-lg	">Editing Account</span></h1> 
+
+  <div class="field">
+    <%= form.label :firstname, class: "block w-full p-3 mt-2 text-gray-700 bg-yellow-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl	" %>
+    <%= form.text_field :firstname, class:"block w-full p-3 mt-2 text-gray-700 bg-gray-100 appearance-none focus:outline-none focus:bg-gray-200 focus:shadow-inner rounded-xl	"  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname, class: "block w-full p-3 mt-2 text-gray-700 bg-yellow-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl	" %>
+    <%= form.text_area :lastname, class:"block w-full p-3 mt-2 text-gray-700 bg-gray-100 appearance-none focus:outline-none focus:bg-gray-200 focus:shadow-inner rounded-xl	" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email, class: "block w-full p-3 mt-2 text-gray-700 bg-yellow-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner rounded-xl	" %>
+    <%= form.text_field :email, class:"block w-full p-3 mt-2 text-gray-700 bg-gray-100 appearance-none focus:outline-none focus:bg-gray-200 focus:shadow-inner rounded-xl	" %>
+    <%= form.submit "Update account", class:" cursor-pointer focus:outline-none mt-3 bg-yellow-500 hover:bg-yellow-400 py-4 px-6 block whitespace-no-wrap rounded-xl" %>
+  </div>
+  </div>
+  </div>
+<% end %>

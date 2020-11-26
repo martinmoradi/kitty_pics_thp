@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :current_cart
 
+
   private
 
   def current_cart
@@ -15,7 +16,7 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    if session[:cart_id] == nil
+    if session[:cart_id].nil?
       @current_cart = Cart.create
       session[:cart_id] = @current_cart.id
     end

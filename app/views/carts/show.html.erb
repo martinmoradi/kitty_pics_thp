@@ -42,8 +42,10 @@
           </svg>
           <% end %>
         </div>
-        <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.product.price, unit: '€', format: "%n%u") %></span>
-        <span class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.total_price, unit: '€', format: "%n%u") %></span>
+        <span
+          class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.product.price, unit: '€', format: "%n%u") %></span>
+        <span
+          class="text-center w-1/5 font-semibold text-sm"><%= number_to_currency(line_item.total_price, unit: '€', format: "%n%u") %></span>
       </div>
       <% end %>
 
@@ -51,7 +53,7 @@
       <svg class="fill-current mr-2 text-yellow-600 w-4" viewBox="0 0 448 512">
         <path
           d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z" />
-        </svg>
+      </svg>
       <span>Continue Shopping </span>
       <% end %>
     </div>
@@ -68,8 +70,16 @@
           <span>Total cost</span>
           <span><%= number_to_currency(@cart.sub_total, unit: '€', format: "%n%u") %></span>
         </div>
-        <button
-          class="bg-yellow-500 hover:bg-yellow-600 font-semibold py-3 text-sm text-black uppercase w-full focus:outline-none">Checkout</button>
+        <div class="stripe">
+          <% if !user_signed_in? %>
+          <%= link_to 'Log In to checkout', new_user_session_path, class:"bg-yellow-500 hover:bg-yellow-600 font-semibold py-3 text-sm text-black uppercase w-full focus:outline-none px-6"%>
+          <% elsif @cart.line_items.empty? %>
+          <p>Your cart is empty 😸 </p>
+          <% else %>
+          <%= render 'stripe' %>
+          <% end %>        
+        </div>
+
       </div>
     </div>
   </div>
