@@ -1,1 +1,19 @@
-<h1>User mail</h1>
+<p>Hello <%= @order.user.email %>!</p></br>
+
+<p>Thank you for shopping with us.</p>
+<p>Here is your order below:</p></br>
+
+<% @order.cart.products.each do |product| %>
+- <%= product.title %>
+
+<% end %>
+
+<hr>
+
+<strong>Order total : <%= @order.cart.sub_total %> €.</strong>
+
+<hr>
+
+<p>You can download your products in you account on https://kitty-pics.herokuapp.com/.</p>
+
+<p>If you have any questions or suggestions, please email us.</p>

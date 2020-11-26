@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  after_create :send_order_mail
+  
   
   def index
     @orders = Order.all
@@ -31,7 +31,5 @@ class OrdersController < ApplicationController
     params.require(:order).permit(:name, :email, :address, :pay_method)
   end
 
-  def send_order_mail
-    OrderMailer.shopping_mail(self).deliver_now
-  end
+  
 end
