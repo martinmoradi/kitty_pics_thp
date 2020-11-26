@@ -1,16 +1,16 @@
-Hello <%= @resource.email %>!
+Hello <%= @order.user.email %>!
 
 Thank you for shopping with us.
 Here is your order below:
 
-<% @cart.items.each do |item| %>
+<% @order.cart.products.each do |item| %>
 - <%= item.title %>
 
 <% end %>
 
 _________________________________________________________
 
-Order total : <%= @cart.sub_total %> €.
+Order total : <%= @order.cart.sub_total %> €.
 
 _________________________________________________________
 
