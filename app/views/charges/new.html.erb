@@ -5,14 +5,11 @@
         <p><%= flash[:error] %></p>
       </div>
     <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
   </article>
-
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
+          data-description="Please checkout with Stripe"
+          data-amount="<%=@current_cart.sub_total * 100%>"
+          data-currency="eur"
           data-locale="auto"></script>
 <% end %>
