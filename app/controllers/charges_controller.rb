@@ -17,8 +17,9 @@ class ChargesController < ApplicationController
                                      amount: @amount,
                                      description: "Charge #{current_user.firstname}",
                                      currency: 'eur'
-                                   })
-
+                                   })                             
+    Order.create(user_id: current_user.id, cart_id: @cart.id, address_id: 1)  
+    session[:cart_id] = nil                        
     flash[:notice] = "Thanks! You paid $#{(@amount / 100).round(2)}."
     redirect_to root_path
   rescue Stripe::CardError => e
