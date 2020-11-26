@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'products#index'
 
-  resources :carts, only: %i[show destroy], path: 'my_cart'
+  resources :carts, only: %i[new create show destroy], path: 'my_cart'
   resource :cart, only: :show, as: :my_cart, path: 'my_cart'
   resources :products do
     resources :line_items, only: %i[create new create destroy]

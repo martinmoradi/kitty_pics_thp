@@ -71,8 +71,7 @@
           <span>Total cost</span>
           <span><%= number_to_currency(@cart.sub_total, unit: '€', format: "%n%u") %></span>
         </div>
-        <button
-          class="bg-yellow-500 hover:bg-yellow-600 font-semibold py-3 text-sm text-black font-semibold uppercase w-full focus:outline-none">Checkout</button>
+        <div><%= render "stripe"%></div>
       </div>
     </div>
   </div>
