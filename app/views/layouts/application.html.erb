@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="yellow-background min-h-full">
+<html class="yellow-background">
   <head>
     <title>Kitty Pics</title>
     <%= csrf_meta_tags %>
@@ -19,8 +19,8 @@
     <div class="text-center ">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    </div>
     <%= yield %>
-    <%= render "layouts/footer" %>
+      <%= render "layouts/footer" %>
   </body>
+
 </html>

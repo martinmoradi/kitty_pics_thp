@@ -94,13 +94,30 @@
             </div>
           </div>
 
+          <!-- SECTION: filter -->
+          <div class="flex flex-wrap flex-col items-center">
+            <div class="flex flex-wrap">
+          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[0].name%></button>
+          
+          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[1].name%></button>
+          
+          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[2].name%></button>
+            </div>
+            <div class="flex flex-wrap mt-2">
+          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[3].name%></button>
+          
+          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[4].name%></button>
+          
+          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[5].name%></button>
+            </div>
+          </div>
           <!-- SECTION: Cards -->
-          <section class="text-gray-900 ">
+
             <div class="flex flex-col items-center flex-wrap justify-between mx-auto p-8 md:flex-row lg:w-5/6 xl:3/4">
               <% @products.each do |product|%>
               <%= render "products/card", product: product %>
               <% end %>
             </div>
-          </section>
+
           </div>
           </div>
