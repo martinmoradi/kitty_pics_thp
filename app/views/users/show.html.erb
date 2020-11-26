@@ -1,21 +1,21 @@
+<div class=" bg-yellow text-gray-900 flex flex-col items-center justify-center p-8 md:flex-row lg:w-5/6 xl:3/4">
+  <div class="flex flex-col md:flex-row w-full">
+    <div class="flex flex-col items-center w-full md:w-1/2">
 
+      <!-- SECTION: Picture -->
+      <img class="object-cover object-center rounded-full h-32 w-32"
+        src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1902&q=80"
+        alt="" />
 
-  <div class=" bg-yellow text-gray-900 flex flex-col items-center justify-center p-8 md:flex-row lg:w-5/6 xl:3/4">
-    <div class="flex flex-col md:flex-row w-full">
-      <div class="flex flex-col items-center w-full md:w-1/2">
-        <!-- SECTION: Picture -->
-        <img class="object-cover object-center rounded-full h-32 w-32"
-          src="https://images.unsplash.com/photo-1499996860823-5214fcc65f8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1902&q=80"
-          alt="" />
+      <!-- SECTION: Text Content -->
+      <h1 class="text-4xl font-light text-yellow-500 ">
+        <%= @user.firstname %>
+        <%= @user.lastname %>
+      </h1>
+      <h2 class="text-xl"> <%= @user.email %></h2>
+    </div>
+    <div class="flex flex-col md:ml-20 lg:-md-20">
 
-        <!-- SECTION: Text Content -->
-        <h1 class="text-4xl font-light text-yellow-500 ">
-          <%= @user.firstname %>
-          <%= @user.lastname %>
-        </h1>
-        <h2 class="text-xl"> <%= @user.email %></h2>
-      </div>
-      <div class="flex flex-col md:ml-20 lg:-md-20">
       <!-- SECTION: Adresses side -->
       <div
         class="mt-5  align-middle justify-center px-8 py-6 border text-gray-900 rounded-b-md bg-yellow-100 border-none shadow-lg">
@@ -40,8 +40,8 @@
             </tr>
           </tbody>
         </table>
-        </div>
-    
+      </div>
+
       <!-- SECTION: Orders side -->
       <div
         class="mt-5 w-100 text-center align-middle justify-center px-8 py-6 border text-gray-900 rounded-b-md bg-yellow-100 border-none shadow-lg">
@@ -65,6 +65,7 @@
     </div>
   </div>
 </div>
+
 <!-- SECTION: Buttons -->
 </div>
 <div class="text-right mr-5">
