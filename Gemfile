@@ -33,8 +33,6 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   # Debugger
   gem "pry"
-  # Hide API keys from bad guys
-  gem "dotenv-rails"
 end
 
 group :development do
@@ -51,8 +49,6 @@ group :development do
   gem "binding_of_caller"
   # Ruby static analyzer and code formatter
   gem "rubocop", require: false
-  # Random data generator
-  gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
   # Preview email in browser
   gem "letter_opener"
   # Generate Diagram
@@ -80,6 +76,22 @@ gem "stripe"
 
 # Allow resetting the ID of tables to 0
 gem "activerecord-reset-pk-sequence"
+
+# Hide API keys from bad guys
+gem "dotenv-rails"
+
+# Mailjet
+gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
+
+# Random data generator
+gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
+
+# Mailjet
+gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
+
+# Hide API keys from bad guys
+gem "dotenv-rails"
+
 #################################################################################
 
 # List of added gems :
@@ -95,5 +107,5 @@ gem "activerecord-reset-pk-sequence"
 # gem "stripe"
 # gem "activerecord-reset-pk-sequence"
 # gem "table_print"
-
+# gem 'mailjet', :git => 'https://github.com/mailjet/mailjet-gem.git'
 #################################################################################

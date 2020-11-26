@@ -32,8 +32,8 @@
             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
           </button>
           <ul class="dropdown-menu absolute hidden text-gray-700 pt-1 divide-y divide-yellow-500">
-            <li><%= link_to 'SignUp', new_user_registration_path, class:"rounded-t bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap " %></li>
-            <li> <%= link_to 'Log In', new_user_session_path, class:"rounded-b bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap "%> </li>
+            <li><%= link_to 'My account', current_user, class:"rounded-t bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap " %></li>
+            <li> <%= link_to 'Log out', destroy_user_session_path, method: :delete,class:"rounded-b bg-yellow-400 hover:bg-yellow-300 py-2 px-11 block whitespace-no-wrap "%> </li>
           </ul>
         
       <% end %>
