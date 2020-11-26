@@ -71,7 +71,7 @@
           <span>Total cost</span>
           <span><%= number_to_currency(@cart.sub_total, unit: '€', format: "%n%u") %></span>
         </div>
-        <div class="stripe>
+        <div class="stripe">
           <% if !user_signed_in? %>
           <%= link_to 'Log In to checkout', new_user_session_path, class:"bg-yellow-500 hover:bg-yellow-600 font-semibold py-3 text-sm text-black uppercase w-full focus:outline-none px-6"%>
           <% elsif @cart.line_items.empty? %>
