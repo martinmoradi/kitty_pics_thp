@@ -1,0 +1,19 @@
+Hello <%= @resource.email %>!
+
+Thank you for shopping with us.
+Here is your order below:
+
+<% @cart.items.each do |item| %>
+- <%= item.title %>
+
+<% end %>
+
+_________________________________________________________
+
+Order total : <%= @cart_subtotal %> €.
+
+_________________________________________________________
+
+You can download your products in you account on https://kitty-pics.herokuapp.com/.
+
+If you have any questions or suggestions, please email us.
