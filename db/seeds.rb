@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require "faker"
-require "activerecord-reset-pk-sequence"
+require 'faker'
+require 'activerecord-reset-pk-sequence'
 
 ActiveRecord::Base.connection.disable_referential_integrity do
   User.delete_all
@@ -37,59 +37,36 @@ end
     email: Faker::Internet.unique.free_email,
     password: Faker::Internet.password(min_length: 8),
     encrypted_password: Faker::Internet.password(min_length: 8),
-    is_admin: false,
+    is_admin: false
   )
 end
 
-puts "5 users seeded"
+puts '5 users seeded'
 
 12.times do
   Product.create!(
     title: Faker::Creature::Cat.name,
     description: Faker::Lorem.paragraph(sentence_count: 3, supplemental: false, random_sentences_to_add: 6),
     price: Faker::Number.within(range: 25..200),
-    img_url: Faker::LoremPixel.image(size: "640x640", is_gray: false, category: "cats"),
+    img_url: Faker::LoremPixel.image(size: '640x640', is_gray: false, category: 'cats')
   )
 end
 
-puts "12 products seeded"
+puts '12 products seeded'
 
 10.times do
   Category.create!(
-    name: Faker::Creature::Cat.breed,
+    name: Faker::Creature::Cat.breed
   )
 end
 
-puts "8 categories seeded"
+puts '8 categories seeded'
 
 Product.ids.each do |id|
   AssigmentProductCategory.create!(
     product_id: id,
-    category_id: Category.ids.sample,
+    category_id: Category.ids.sample
   )
 end
 
-puts "Categories applied to products"
-
-User.ids.each do |id|
-  Address.create!(
-    street_number: Faker::Number.within(range: 1..200),
-    street_name: Faker::Address.street_name,
-    zipcode: Faker::Address.zip_code,
-    city: Faker::Address.city,
-    country: Faker::Address.country,
-    user_id: id,
-  )
-end
-
-puts "Addresses linked to users"
-
-50.times do
-  Rating.create!(
-    product_id: Product.ids.sample,
-    user_id: User.ids.sample,
-    rating: Faker::Number.within(range: 3..5),
-  )
-end
-
-puts "50 ratings seeded"
+puts 'Categories applied to products'
