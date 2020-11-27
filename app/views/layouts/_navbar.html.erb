@@ -7,7 +7,7 @@
   <ul class="flex items-center justify-between uppercase text-center sm:text-center">
     <%= link_to "Home", root_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
   <% if current_user && current_user.is_admin %>
-    <%= link_to "Admin", admin_dashboards_path, class:"hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6"%>
+    <a href="/admin" class="hover:text-yellow-500 group-focus:text-yellow-300 mx-2 sm:mx-4 lg:mx-6">Admin</a>
   <% end %>
     
     <!-- When user is connected -->
