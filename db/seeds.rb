@@ -12,22 +12,12 @@ require 'activerecord-reset-pk-sequence'
 ActiveRecord::Base.connection.disable_referential_integrity do
   User.delete_all
   User.reset_pk_sequence
-  Address.delete_all
-  Address.reset_pk_sequence
   AssigmentProductCategory.delete_all
   AssigmentProductCategory.reset_pk_sequence
-  Cart.delete_all
-  Cart.reset_pk_sequence
   Category.delete_all
   Category.reset_pk_sequence
-  LineItem.delete_all
-  LineItem.reset_pk_sequence
-  Order.delete_all
-  Order.reset_pk_sequence
   Product.delete_all
   Product.reset_pk_sequence
-  Rating.delete_all
-  Rating.reset_pk_sequence
 end
 
 5.times do
