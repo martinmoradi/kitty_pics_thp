@@ -42,7 +42,7 @@ puts '5 users seeded'
   )
 end
 
-puts '12 products seeded'
+puts '16 products seeded'
 
 10.times do
   Category.create!(
@@ -50,7 +50,7 @@ puts '12 products seeded'
   )
 end
 
-puts '8 categories seeded'
+puts '6 categories seeded'
 
 Product.ids.each do |id|
   AssigmentProductCategory.create!(
