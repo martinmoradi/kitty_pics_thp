@@ -1,8 +1,8 @@
 <div class="md:w-1/2 xl:w-1/3 py-4 md:px-8 sm:-mt-24  md:mt-0">
 
   <%= link_to product_path (product.id)  do %>
-  <div class="image_size_helper">
-    <%= image_tag(product.img_url) %>
+  <div class="image_size_helper rounded shadow-md	">
+    <%= image_tag(product.img_url)  %>
   </div>
   <% end %>
   <div
@@ -21,8 +21,8 @@
        <%= link_to product_path (product.id)  do %>
       <h1 class="text-gray-800 font-semibold text-xl"><%= product.title %><span class="ml-6"><%= product.price%>€</span></h1>
       <% end %>
-      <%= button_to line_items_path(product_id: product.id), class: 'bg-yellow-500 text-xs text-white px-2 py-1 font-semibold tracking-widest rounded uppercase hover:bg-yellow-400 absolute right-0 -mb-16' do %>
-      <%= image_pack_tag 'cart1.png', size:"28x28" %>
+      <%= button_to line_items_path(product_id: product.id), class: 'bg-yellow-500 text-xs text-white px-2 py-1 font-semibold tracking-widest rounded uppercase hover:bg-yellow-400 absolute right-0 shadow-sm' do %>
+      <%= image_pack_tag 'cart1.png', size:"30x30" %>
       <% end %>
     </div>
   </div>
