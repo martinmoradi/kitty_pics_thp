@@ -86,6 +86,9 @@ gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "mast
 # Mailjet
 gem "mailjet", :git => "https://github.com/mailjet/mailjet-gem.git"
 
+# Admin panel
+gem "rails_admin", "~> 2.0"
+
 #################################################################################
 
 # List of added gems :

@@ -1,68 +1,33 @@
 <p id="notice"><%= notice %></p>
-
-
 <section class=" bg-transparent text-gray-900">
-
-
-  <!-- SECTION: eCommerce -->
   <div class="flex flex-col justify-between mx-auto p-8 md:flex-row lg:w-5/6 xl:3/4">
-    <!-- SECTION: Image Gallery -->
     <div class="flex flex-col md:w-1/2 mx-2">
       <!-- SECTION: Main Image -->
       <%= image_tag(@product.img_url) %>
-
-      <!-- !SECTION: Other Images -->
     </div>
-    <!-- !SECTION: Image Gallery -->
-    <!-- SECTION: Product -->
     <div class="flex flex-col h-full justify-evenly px-8 items-center md:w-1/2 md:mx-2">
       <!-- SECTION: Product Title -->
       <h1 class="text-3xl text-center md:text-5xl leading-none font-semibold">
         <%= @product.title %>
       </h1>
-      <!-- !SECTION: Product Title -->
       <!-- SECTION: Product Subtitle -->
       <h2 class="text-2xl font-light text-center mb-4">
         <%= @product.categories.first.name %>
-      </h2>
-      <!-- !SECTION: Product Subtitle -->
+      </h2> 
       <!-- SECTION: Product Description -->
       <p class="text-justify">
         <%= @product.description %>
-
-      </p>
-      <!-- !SECTION: Product Description -->
-      <div class="flex flex-col md:flex-row justify-between items-center w-full">
-        <!-- SECTION: Add to cart -->
-        <div class="flex w-full mt-8 justify-end items-center">
-          <!-- SECTION: Product Price -->
-          <h2
-            class="text-center text-xl xl:text-2xl font-semibold w-32 border-t border-b border-l border-gray-400 rounded-l-md py-2">
+      </p>      
+      <div class="flex flex-col md:flex-row justify-between items-center w-full">   
+        <div class="flex w-full mt-8 justify-end items-center">        
+          <h2 class="text-center text-xl xl:text-2xl font-semibold w-32 border-t border-b border-l border-gray-400 rounded-l-md py-2">
             <%= @product.price %><span class="text-base">€</span>
-          </h2>
-          <!-- !SECTION: Product Price -->
+          </h2>        
           <%= button_to "Add to cart", product_line_items_path(@product.id), class: "px-6 bg-yellow-500 border-yellow-500 text-white md:px-12 uppercase py-2 rounded-r-md text-xl border-t border-b border-r xl:text-2xl transition-colors duration-200 ease-in-out focus:outline-none hover:bg-yellow-300"
           %>
-      
-        
-    
         </div>
-
-
-        <!-- !SECTION: Add to cart -->
       </div>
     </div>
-
-    <!-- !SECTION: Product -->
-
   </div>
-  <div class="text-right mr-5">
-  <% if current_user.is_admin %>
-    <%= link_to 'Edit', edit_product_path(@product) %> |
-  <% end %>
-    <%= link_to 'Back', products_path %></div>
-    
-  <!-- !SECTION: eCommerce -->
-    
-      </div>
+  </div>
 </section>

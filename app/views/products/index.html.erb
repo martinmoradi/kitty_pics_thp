@@ -95,26 +95,20 @@
           </div>
 
           <!-- SECTION: filter -->
-          <div class="flex flex-wrap flex-col items-center mb-20 lg:mb-0" >
-          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">All</button>
-            <div class="flex flex-wrap">
-          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[0].name%></button>
-          
-          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[1].name%></button>
-          
-          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[2].name%></button>
-            </div>
-            <div class="flex flex-wrap mt-2">
-          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[3].name%></button>
-          
-          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[4].name%></button>
-          
-          <button class="bg-yellow-500 text-white active:bg-yellow-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease"><%= @categories[5].name%></button>
+          <div class="flex flex-nowrap flex-row items-center mb-20 lg:mb-0  border-b-2 border-yellow-200 py-4 yellow-background justify-center"  >
+            <div class="div mt-10">
+            <button class="btn-script bg-yellow-500 hover:bg-yellow-400 text-black mx-3 active:bg-yellow-600 font-bold uppercase text-xs px-5 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease mt-5">All</button>
+            <% @categories.each do |category| %>            
+            <button id="<%= category.name.split.join.downcase %>" class="btn-script mx-3 bg-yellow-500 hover:bg-yellow-400  text-black active:bg-yellow-600 font-bold uppercase text-xs px-5 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+            <%= category.name %>
+            </button>          
+              <% end %>
             </div>
           </div>
+         
           <!-- SECTION: Cards -->
 
-            <div class="flex flex-col items-center flex-wrap justify-between mx-auto p-8 md:flex-row lg:w-5/6 xl:3/4">
+            <div class="flex flex-col flex-1 items-center flex-wrap justify-between mx-auto p-8 md:flex-row lg:w-5/6 xl:3/4">
               <% @products.each do |product|%>
               <%= render "products/card", product: product %>
               <% end %>
