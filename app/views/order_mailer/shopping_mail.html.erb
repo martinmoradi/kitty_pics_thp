@@ -4,8 +4,10 @@
 <p>Here is your order below:</p></br>
 
 <% @order.cart.products.each do |product| %>
-- <%= product.title %>
-
+- <h2><%= product.title %> :</h2>
+<br>
+<img src="<%= product.img_url %>"> 
+<br>
 <% end %>
 
 <hr>
