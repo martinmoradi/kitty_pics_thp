@@ -14,4 +14,9 @@ class User < ApplicationRecord
   has_many :ratings
 
   has_one_attached :avatar
+
+  def self.admin?
+    User.where(is_admin: true)
+  end
+  
 end

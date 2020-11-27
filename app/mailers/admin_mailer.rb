@@ -1,6 +1,6 @@
 class AdminMailer < ApplicationMailer
   def shopping_mail_admin(order)
     @order = order
-    mail(to: @admin.email, subject: 'Récap de commande')
+    mail(to: User.admin?.pluck(:email), subject: 'Une commande a été passée !')
   end
 end

@@ -1,1 +1,17 @@
-<h1>Admin mail</h1>
+<h1>Kitty-Pics Order</h1>
+
+<p>Meow 😸 </p></br>
+
+<p>An order has been placed on kitty-pics by <%= @order.user.email %>.</p>
+<p>Details below:</p></br>
+
+<% @order.cart.products.each do |product| %>
+
+- <strong><%= product.title %> </strong>
+<br>
+<% end %>
+<hr>
+
+<strong>Order total : <%= @order.cart.sub_total %> €.</strong>
+
+<hr>
