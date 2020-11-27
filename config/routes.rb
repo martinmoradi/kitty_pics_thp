@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   root 'products#index'
 
+
+namespace :admin do
+  resources :dashboards
+end
+
   resources :carts, only: %i[show destroy], path: 'my_cart'
   resource :cart, only: :show, as: :my_cart, path: 'my_cart'
   resources :products do

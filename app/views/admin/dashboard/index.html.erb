@@ -1,1 +1,20 @@
 <h1>Admin Dashboard</h1>
+
+<table class="shadow-lg bg-white">
+  <tr>
+    <th class="bg-blue-100 border text-left px-8 py-4">Order ID</th>
+    <th class="bg-blue-100 border text-left px-8 py-4">user mail</th>
+    <th class="bg-blue-100 border text-left px-8 py-4">cart sum</th>
+    <th class="bg-blue-100 border text-left px-8 py-4">order created at</th>
+  </tr>
+  <%= @orders.each |order| do%>
+  <tr>
+    <td class="border px-8 py-4"><%= order.id %></td>
+    <td class="border px-8 py-4"><<%= order.user.email %></td>
+    <td class="border px-8 py-4"><%= order.cart.sub_total %> </td>
+    <td class="border px-8 py-4"><%= order.created_at %></td>
+  </tr>
+  <% end %>
+</table>
+
+

@@ -33,11 +33,10 @@
                 <!-- SECTION:orders loop-->
            <% current_user.orders.each_with_index do |order| %>
             <tr>
-              <td class="px-8 py-4">Commande du <%= order.created_at.strftime('%d/%m/%Y à %H:%M') %> d'un montant de <%= order.sub_total %>€</td>
+              <td class="px-8 py-4">N° <%= order.id %></td>
+              <td class="px-8 py-4"><%= order.cart.sub_total %>€</td>
+              <td class="px-8 py-4"><%= order.created_at.strftime('%d/%m/%Y à %H:%M') %> </td>
             <% end %>
-              <td class="px-8 py-4">N°12354</td>
-              <td class="px-8 py-4">90 €</td>
-              <td class="px-8 py-4"><i class="fas fa-search"></i></td>
             </tr>
           </tbody>
         </table>
