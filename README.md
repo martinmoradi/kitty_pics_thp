@@ -2,7 +2,9 @@
 
 KittyPics est un site de vente de photo de chat produit lors du projet "boutique en ligne" de THP, dont voici un magnifique aperçu :
 
-![alt text](https://media.discordapp.net/attachments/764019975488405504/781675984973070376/kittypics.png?width=1259&height=610)
+![KittyPics](https://imgur.com/WTD1rhx)
+
+
 
 
 Lien Heroku : https://kitty-pics.herokuapp.com/
