@@ -2,8 +2,7 @@
 
 KittyPics est un site de vente de photo de chat produit lors du projet "boutique en ligne" de THP, dont voici un magnifique aperçu :
 
-![KittyPics](https://imgur.com/WTD1rhx)
-
+![Kitty-Pics](https://ibb.co/SmVQzgC)
 
 
 
