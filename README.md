@@ -15,7 +15,7 @@ Lien Heroku : https://kitty-pics.herokuapp.com/
 * bundle
 * rails db:drop db:create db:migrate db:seed
 * rails s
-
+```
 
 **L'équipe**
 
