@@ -1,24 +1,26 @@
-# README
+# `😸 `KittyPics
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+KittyPics est un site de vente de photo de chat produit lors du projet "boutique en ligne" de THP, dont voici un magnifique aperçu :
 
-Things you may want to cover:
+![1606435529645.png](./1606435529645.png)
 
-* Ruby version
+Lien Heroku : https://kitty-pics.herokuapp.com/
 
-* System dependencies
+**Installation en local**
 
-* Configuration
+---
 
-* Database creation
+* git clone
+* bundle
+* rails db:drop db:create db:migrate db:seed
+* rails s
 
-* Database initialization
+**L'équipe**
 
-* How to run the test suite
+---
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- https://github.com/AxelVigroux 🐦
+- https://github.com/martinmoradi
+- https://github.com/Uriel-Sautron
+- https://github.com/DLBY
+- https://github.com/Joe-Pumpkin
