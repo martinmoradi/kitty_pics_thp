@@ -97,12 +97,10 @@
           <!-- SECTION: filter -->
           <div class="flex flex-nowrap flex-row items-center mb-20 lg:mb-0  border-b-2 border-yellow-200 py-4 yellow-background justify-center"  >
             <div class="div mt-10">
-            <button class="btn-script bg-yellow-500 hover:bg-yellow-400 text-black mx-3 active:bg-yellow-600 font-bold uppercase text-xs px-5 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease mt-5">All</button>
-            <% @categories.each do |category| %>            
-            <button id="<%= category.name.split.join.downcase %>" class="btn-script mx-3 bg-yellow-500 hover:bg-yellow-400  text-black active:bg-yellow-600 font-bold uppercase text-xs px-5 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
-            <%= category.name %>
-            </button>          
-              <% end %>
+            <%= link_to 'all', root_path, class:"bg-yellow-500 hover:bg-yellow-400 text-black mx-3 active:bg-yellow-600 font-bold uppercase text-xs px-5 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1"  %>           
+            <% @categories.each do |category| %>                 
+            <%= link_to category.name, [category, :products], method: :get, class:"mx-3 bg-yellow-500 hover:bg-yellow-400 text-black active:bg-yellow-600 font-bold uppercase text-xs px-5 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1" %>      
+             <% end %>
             </div>
           </div>
          

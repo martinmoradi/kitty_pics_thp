@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   resources :orders, only: %i[index show new]
   resources :charges, only: %i[new create]
 
+  resources :categories, only: nil do
+    resources :products, only: :index
+  end
+
   devise_for :users, controllers: { registrations: 'users/registrations' }, path: '/', path_names: { sign_in: 'log_in',
                                                                                                      sign_out: 'log_out',
                                                                                                      password: 'secret',
